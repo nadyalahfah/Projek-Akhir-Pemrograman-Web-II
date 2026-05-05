@@ -1,0 +1,137 @@
+[
+    {
+        "id": "mobile-legends",
+        "name": "Mobile Legends",
+        "image": "assets/images/moba.webp",
+        "category": "MOBA",
+        "popular": true,
+        "active": true,
+        "currency": "Diamond",
+        "needs_server_id": true,
+        "products": [
+            {"id": "ml-1", "amount": "86", "bonus": "", "price": 20000, "discount": 0, "popular": true, "active": true},
+            {"id": "ml-2", "amount": "172", "bonus": "", "price": 40000, "discount": 0, "popular": false, "active": true},
+            {"id": "ml-3", "amount": "257", "bonus": "", "price": 60000, "discount": 0, "popular": false, "active": true},
+            {"id": "ml-4", "amount": "344", "bonus": "", "price": 80000, "discount": 0, "popular": false, "active": true},
+            {"id": "ml-5", "amount": "429", "bonus": "", "price": 100000, "discount": 10, "popular": false, "active": true},
+            {"id": "ml-6", "amount": "514", "bonus": "", "price": 120000, "discount": 0, "popular": false, "active": true},
+            {"id": "ml-7", "amount": "706", "bonus": "", "price": 160000, "discount": 0, "popular": true, "active": true},
+            {"id": "ml-8", "amount": "878", "bonus": "+92", "price": 200000, "discount": 5, "popular": false, "active": true},
+            {"id": "ml-9", "amount": "2195", "bonus": "+230", "price": 500000, "discount": 15, "popular": false, "active": true}
+        ]
+    },
+    {
+        "id": "free-fire",
+        "name": "Free Fire",
+        "image": "assets/images/epep.jpg",
+        "category": "Battle Royale",
+        "popular": true,
+        "active": true,
+        "currency": "Diamond",
+        "needs_server_id": false,
+        "products": [
+            {"id": "ff-1", "amount": "50", "bonus": "", "price": 7000, "discount": 0, "popular": false, "active": true},
+            {"id": "ff-2", "amount": "100", "bonus": "", "price": 14000, "discount": 0, "popular": true, "active": true},
+            {"id": "ff-3", "amount": "210", "bonus": "", "price": 28000, "discount": 0, "popular": false, "active": true},
+            {"id": "ff-4", "amount": "355", "bonus": "", "price": 47000, "discount": 0, "popular": false, "active": true},
+            {"id": "ff-5", "amount": "720", "bonus": "", "price": 95000, "discount": 10, "popular": false, "active": true},
+            {"id": "ff-6", "amount": "1450", "bonus": "", "price": 190000, "discount": 15, "popular": false, "active": true}
+        ]
+    },
+    {
+        "id": "pubg-mobile",
+        "name": "PUBG Mobile",
+        "image": "assets/images/pubg.jpg",
+        "category": "Battle Royale",
+        "popular": true,
+        "active": true,
+        "currency": "UC",
+        "needs_server_id": false,
+        "products": [
+            {"id": "pubg-1", "amount": "60", "bonus": "", "price": 15000, "discount": 0, "popular": false, "active": true},
+            {"id": "pubg-2", "amount": "325", "bonus": "", "price": 75000, "discount": 0, "popular": true, "active": true},
+            {"id": "pubg-3", "amount": "660", "bonus": "", "price": 150000, "discount": 0, "popular": false, "active": true},
+            {"id": "pubg-4", "amount": "1800", "bonus": "", "price": 400000, "discount": 10, "popular": false, "active": true}
+        ]
+    },
+    {
+        "id": "genshin-impact",
+        "name": "Genshin Impact",
+        "image": "assets/images/genshin.jpg",
+        "category": "RPG",
+        "popular": true,
+        "active": true,
+        "currency": "Genesis Crystal",
+        "needs_server_id": false,
+        "products": [
+            {"id": "gs-1", "amount": "60", "bonus": "", "price": 16000, "discount": 0, "popular": false, "active": true},
+            {"id": "gs-2", "amount": "330", "bonus": "", "price": 79000, "discount": 0, "popular": true, "active": true},
+            {"id": "gs-3", "amount": "1090", "bonus": "", "price": 249000, "discount": 0, "popular": false, "active": true},
+            {"id": "gs-4", "amount": "2240", "bonus": "", "price": 479000, "discount": 5, "popular": false, "active": true}
+        ]
+    },
+    {
+        "id": "valorant",
+        "name": "Valorant",
+        "image": "assets/images/valo.png",
+        "category": "FPS",
+        "popular": false,
+        "active": true,
+        "currency": "VP",
+        "needs_server_id": false,
+        "products": [
+            {"id": "valo-1", "amount": "475", "bonus": "", "price": 50000, "discount": 0, "popular": false, "active": true},
+            {"id": "valo-2", "amount": "1000", "bonus": "", "price": 100000, "discount": 0, "popular": true, "active": true},
+            {"id": "valo-3", "amount": "2050", "bonus": "", "price": 200000, "discount": 0, "popular": false, "active": true},
+            {"id": "valo-4", "amount": "3650", "bonus": "", "price": 350000, "discount": 8, "popular": false, "active": true}
+        ]
+    },
+    {
+        "id": "call-of-duty",
+        "name": "Call of Duty Mobile",
+        "image": "assets/images/cod.jpg",
+        "category": "FPS",
+        "popular": false,
+        "active": true,
+        "currency": "CP",
+        "needs_server_id": false,
+        "products": [
+            {"id": "cod-1", "amount": "80", "bonus": "", "price": 15000, "discount": 0, "popular": false, "active": true},
+            {"id": "cod-2", "amount": "400", "bonus": "", "price": 70000, "discount": 0, "popular": true, "active": true},
+            {"id": "cod-3", "amount": "800", "bonus": "", "price": 140000, "discount": 0, "popular": false, "active": true},
+            {"id": "cod-4", "amount": "2000", "bonus": "", "price": 350000, "discount": 10, "popular": false, "active": true}
+        ]
+    },
+    {
+        "id": "arena-of-valor",
+        "name": "Arena of Valor",
+        "image": "assets/images/hok.jpg",
+        "category": "MOBA",
+        "popular": false,
+        "active": true,
+        "currency": "Voucher",
+        "needs_server_id": true,
+        "products": [
+            {"id": "aov-1", "amount": "60", "bonus": "", "price": 15000, "discount": 0, "popular": false, "active": true},
+            {"id": "aov-2", "amount": "300", "bonus": "", "price": 70000, "discount": 0, "popular": true, "active": true},
+            {"id": "aov-3", "amount": "600", "bonus": "", "price": 140000, "discount": 0, "popular": false, "active": true},
+            {"id": "aov-4", "amount": "1500", "bonus": "", "price": 350000, "discount": 10, "popular": false, "active": true}
+        ]
+    },
+    {
+        "id": "clash-of-clans",
+        "name": "Clash of Clans",
+        "image": "assets/images/coc.jpg",
+        "category": "Strategy",
+        "popular": false,
+        "active": true,
+        "currency": "Gems",
+        "needs_server_id": false,
+        "products": [
+            {"id": "coc-1", "amount": "80", "bonus": "", "price": 15000, "discount": 0, "popular": false, "active": true},
+            {"id": "coc-2", "amount": "500", "bonus": "", "price": 75000, "discount": 0, "popular": true, "active": true},
+            {"id": "coc-3", "amount": "1200", "bonus": "", "price": 150000, "discount": 0, "popular": false, "active": true},
+            {"id": "coc-4", "amount": "2500", "bonus": "", "price": 300000, "discount": 10, "popular": false, "active": true}
+        ]
+    }
+]
