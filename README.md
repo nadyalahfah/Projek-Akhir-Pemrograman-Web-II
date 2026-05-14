@@ -1,4 +1,6 @@
-# 🎮 NexusTopup v3.0 — MySQL
+# 🎮 NexusTopup — Web Top Up Game Modern
+
+Platform top up game berbasis **PHP + MySQL** dengan sistem Device ID otomatis, panel admin lengkap, dan desain dark modern.
 
 ---
 
@@ -6,129 +8,114 @@
 
 ```
 nexustopup_mysql/
-├── index.php              ← Halaman utama
-├── config.php             ← ⚙️ KONFIGURASI UTAMA (DB + Digiflazz)
-├── webhook.php            ← Endpoint webhook Digiflazz
-├── nexustopup.sql         ← Import database ini ke phpMyAdmin
+├── index.php              ← Halaman utama (storefront)
+├── config.php             ← ⚙️ Konfigurasi database (JANGAN di-push ke GitHub)
+├── nexustopup.sql         ← File SQL untuk import database
 │
 ├── includes/
-│   ├── db.php             ← Database PDO MySQL
-│   ├── api.php            ← API user (AJAX)
-│   └── digiflazz.php      ← Integrasi Digiflazz API
+│   ├── db.php             ← Database helper (PDO MySQL)
+│   └── api.php            ← API endpoint untuk user (AJAX)
 │
 ├── admin/
-│   ├── login.php          ← Login admin
+│   ├── login.php          ← Halaman login admin
 │   ├── index.php          ← Dashboard admin
-│   ├── api.php            ← API admin
-│   ├── auth.php           ← Auth helper
+│   ├── api.php            ← API endpoint untuk admin
+│   ├── auth.php           ← Helper autentikasi
 │   └── logout.php
 │
-├── assets/                ← CSS, JS, Gambar
-└── logs/                  ← Log webhook (auto-dibuat)
+├── assets/
+│   ├── css/style.css      ← Stylesheet utama
+│   ├── js/app.js          ← JavaScript storefront
+│   └── images/            ← Gambar game
+│
+└── logs/                  ← Log sistem (auto-dibuat)
 ```
 
 ---
 
-## 🚀 TAHAPAN SETUP
+## 🚀 Cara Setup
 
-### LANGKAH 1 — Import Database
+### Langkah 1 — Import Database
 
 1. Buka `http://localhost/phpmyadmin`
 2. Klik database **nexustopup** di sidebar kiri
-3. Klik tab **Import** di atas
-4. Klik **Choose File** → pilih file `nexustopup.sql`
-5. Klik **Go / Import**
-6. Seharusnya muncul pesan hijau "Import berhasil"
+3. Klik tab **Import**
+4. Pilih file `nexustopup.sql` → klik **Go**
 
----
-
-### LANGKAH 2 — Copy Project ke XAMPP
+### Langkah 2 — Copy ke XAMPP
 
 Salin folder `nexustopup_mysql` ke:
 ```
 C:\xampp\htdocs\nexustopup_mysql
 ```
 
----
-
-### LANGKAH 3 — Edit config.php
-
-Buka file `config.php` dan sesuaikan:
+### Langkah 3 — Edit config.php
 
 ```php
-// Database (XAMPP default)
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'nexustopup');
 define('DB_USER', 'root');
-define('DB_PASS', '');   // kosong untuk XAMPP default
-
-// Digiflazz (isi setelah dapat API Key)
-define('DIGIFLAZZ_USERNAME', 'username_digiflazz_kamu');
-define('DIGIFLAZZ_API_KEY_DEV',  'api_key_development');
-define('DIGIFLAZZ_API_KEY_PROD', 'api_key_production');
-define('DIGIFLAZZ_MODE', 'dev'); // ganti 'prod' saat go live
+define('DB_PASS', '');   // kosong = default XAMPP
 ```
 
----
-
-### LANGKAH 4 — Buka Web
+### Langkah 4 — Buka di Browser
 
 ```
 http://localhost/nexustopup_mysql/
 ```
 
-Admin Panel:
+Admin panel:
 ```
 http://localhost/nexustopup_mysql/admin/login.php
 ```
-Login: `admin` / `admin123`
 
 ---
 
-### LANGKAH 5 — Setup Digiflazz
+## 🔑 Login Admin Default
 
-1. Login Digiflazz → **Pengaturan → API**
-2. Salin **Username** dan **API Key Development**
-3. Isi di `config.php`
-4. Buka Admin Panel → **Digiflazz API** → klik **Cek Saldo**
-5. Kalau muncul saldo → koneksi berhasil! ✅
+| Username | Password  |
+|----------|-----------|
+| `admin`  | `admin123`|
 
----
-
-### LANGKAH 6 — Isi SKU Digiflazz ke Produk
-
-1. Di Admin Panel → **Digiflazz API** → bagian "Produk Tanpa SKU"
-2. Klik **Set SKU** di setiap produk
-3. Isi kode SKU dari price list Digiflazz
-   - Contoh ML 86 Diamond → `game-ml-86-diamond` (lihat di price list)
-4. Simpan
+> Ganti password setelah login pertama di menu **Pengaturan**!
 
 ---
 
-### LANGKAH 7 — Daftarkan Webhook (saat hosting)
+## 📱 Sistem Device ID
 
-Di panel Digiflazz → Pengaturan → Webhook URL, isi:
-```
-https://domainmu.com/webhook.php
-```
+Setiap pengguna otomatis mendapat **Device ID unik** saat pertama buka web — tanpa perlu daftar akun. Riwayat transaksi tersimpan per perangkat dan bisa dilihat di tab **Transaksi**.
 
 ---
 
-## 🔑 Admin Default
+## ⚙️ Fitur Admin Panel
 
-| Username | Password |
-|----------|----------|
-| `admin`  | `admin123` |
-
-**Ganti password setelah login pertama!**
+| Fitur | Keterangan |
+|-------|-----------|
+| Dashboard | Statistik transaksi, revenue, device unik |
+| Game & Produk | Tambah, edit, hapus game + upload gambar |
+| Semua Transaksi | Lihat, filter, update status transaksi |
+| Pengaturan | Ganti password admin |
 
 ---
 
 ## ⚠️ Troubleshooting
 
-| Error | Solusi |
-|-------|--------|
-| Koneksi DB gagal | Cek DB_HOST, DB_NAME, DB_USER, DB_PASS di config.php |
-| Tabel tidak ada | Import nexustopup.sql ke phpMyAdmin |
-| Cek saldo gagal | Isi DIGIFLAZZ_USERNAME dan API Key di config.php |
-| Game tidak muncul | Cek tabel games di phpMyAdmin |
+| Masalah | Solusi |
+|---------|--------|
+| Game tidak muncul | Jalankan `debug.php` untuk cek koneksi DB |
+| Koneksi DB gagal | Cek `config.php` dan pastikan MySQL XAMPP sudah START |
+| Tabel tidak ada | Import ulang `nexustopup.sql` ke phpMyAdmin |
+| Gambar tidak muncul | Pastikan folder `assets/images/` ada dan bisa ditulis |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend**: PHP 7.4+
+- **Database**: MySQL (via PDO)
+- **Frontend**: HTML, CSS, Vanilla JavaScript
+- **Tools**: XAMPP / Laragon
+
+---
+
+> Dibuat sebagai Projek Akhir Pemrograman Web II
