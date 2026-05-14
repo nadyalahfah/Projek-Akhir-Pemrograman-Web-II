@@ -1,4 +1,4 @@
-# 🎮 NexusTopup v3.0 — MySQL + Digiflazz Edition
+# 🎮 NexusTopup v3.0 — MySQL
 
 ---
 
